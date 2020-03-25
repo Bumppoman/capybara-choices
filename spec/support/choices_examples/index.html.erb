@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  </head>
+
+  <body>
+
+    <h2>Choices version: <%= choices_version %> </h2>
+
+    <br/>
+    <hr/>
+
+    <h2>Single select box</h2>
+
+    <div id="single">
+      <label for="console">Select game console you would want to play</label>
+      <select id="console" name="console">
+        <option></option>
+        <option value="xbox">XBox</option>
+        <option value="playstation 3">PlayStation 3</option>
+        <option value="playstation">PlayStation</option>
+        <option value="wii">Wii</option>
+      </select>
+
+      <script>
+        const single = new Choices(document.getElementById('console'));
+      </script>
+    </div>
+    <br/>
+    <hr/>
+
+    <h2>Grouped select box</h2>
+
+    <div id="grouped">
+      <label for="movie">Favourite movie</label>
+      <select id="movie" name="movie">
+        <option></option>
+        <optgroup label="Action">
+          <option value="Race Till You Drop">Race Till You Drop</option>
+          <option value="Big Boom Wooh">Big Boom Wooh</option>
+        </optgroup>
+        <optgroup label="Comedy">
+          <option value="Everybody Laughs">Everybody Laughs</option>
+          <option value="Hahahahaha">Hahahahaha</option>
+        </optgroup>
+      </select>
+
+      <script>
+        const grouped = new Choices(document.getElementById('movie'));
+      </script>
+    </div>
+
+    <br/>
+    <hr/>
+
+    <h2>Multiple select box</h2>
+
+    <div id="multiple">
+      <label for="todo">Things to do</label>
+      <select id="todo" name="todo" multiple>
+        <option></option>
+        <option value="buy milk">Buy Milk</option>
+        <option value="see malaysia">See Malaysia</option>
+        <option value="go to gym">Go to gym</option>
+      </select>
+
+      <script>
+        const multiple = new Choices(document.getElementById('todo'), { removeItemButton: true });
+      </script>
+    </div>
+  </body>
+</html>
